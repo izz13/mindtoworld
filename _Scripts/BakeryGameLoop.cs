@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class BakeryGameLoop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    enum Breadtype { Wheat, Baguette, Bun, SourDough, Croissant };
+
+    enum Breadsize { Small, Medium, Big };
+
+    enum Breadcut { Thin, Thick, NoCut };
+
+    enum ChooseBreadtype()
     {
-        
+        int BreadtypeCount = Breadtype.GetValues().Length;
+        int RandomInt = Random.Range(0, BreadtypeCount);
+        if (RandomInt == 0)
+            return Breadtype.Wheat;
+        else if (RandomInt == 1)
+            return Breadtype.Baguette;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
