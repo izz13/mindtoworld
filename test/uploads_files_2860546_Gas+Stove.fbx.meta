@@ -3,7 +3,42 @@ guid: 8c8e4ef07b707409d9a21f5bad8e353e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Igniter
+    second: {fileID: 2100000, guid: 73e3062efc6c3442ba1410ecdc840d7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marble062_2K
+    second: {fileID: 2100000, guid: 0b66cd625b77c4fd4a135c8a31e0c18b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Black
+    second: {fileID: 2100000, guid: 0a4aca02a21584adc974a74e6a01aa37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Silver
+    second: {fileID: 2100000, guid: d9899e50a7b75412da3d5fd20fd7b578, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber Base
+    second: {fileID: 2100000, guid: a58255ab3f9c744f698532c61c7d2597, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stove Switch
+    second: {fileID: 2100000, guid: c1e396a8604af4cd686b4f294a76f784, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stove Switch Red Mark
+    second: {fileID: 2100000, guid: 27e7ae70e6df3469e96cc8e578a6a72d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
