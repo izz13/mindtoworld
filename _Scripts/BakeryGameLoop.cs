@@ -22,7 +22,7 @@ public class BakeryGameLoop : MonoBehaviour
             return Breadtype.Bun;
         else if (RandomInt == 3)
             return Breadtype.SourDough;
-<<<<<<< Updated upstream
+
         else
             return Breadtype.Croissant;
     }
@@ -30,14 +30,12 @@ public class BakeryGameLoop : MonoBehaviour
     private void Start()
     {
         Debug.Log(ChooseBreadtype());
-=======
-        else if (RandomInt == 4)
-            return Breadtype.Croissant;
+        
     }
 
-    enum ChooseBreadsize()
+    Breadsize ChooseBreadsize()
     {
-        int BreadsizeCount = Breadsize.GetValues().Length;
+        int BreadsizeCount = 3;
         int RandomInt = Random.Range(0, BreadsizeCount);
         if (RandomInt == 0)
             return Breadsize.Small;
@@ -45,19 +43,21 @@ public class BakeryGameLoop : MonoBehaviour
             return Breadsize.Medium;
         else if (RandomInt == 2)
             return Breadsize.Big;
+        else
+            return Breadsize.Small;
     }
 
-    enum ChooseBreadcut()
+    Breadcut ChooseBreadcut()
     {
-        int BreadcutCount = Breadcut.GetValues().Length;
+        int BreadcutCount = 3;
         int RandomInt = Random.Range(0, BreadcutCount);
         if (RandomInt == 0)
             return Breadcut.Thin;
         else if (RandomInt == 1)
             return Breadcut.Thick;
-        else if (RandomInt == 2)
+        else
             return Breadcut.NoCut;
->>>>>>> Stashed changes
+
     }
 
 }
