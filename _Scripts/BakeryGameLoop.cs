@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//The Steps For Making Bread i.e. the game states we want or game to be
+//1. Read the instructions for the type of bread to make, gameState : readInstructions
+//2. Get the correct dough type for breadtype and size, gameState : collectBread
+//3. Put the dough in the oven to bake, gameState : bakeBread
+//4. Take out the bread and put it on the cutting board, gameState : placeBread
+//5. Cut the bread according the breadcut size requested, gameState : cutBread
+//6. Put it on a finishing plate/bag to finish bread making process, gameState : finishBread
+//7. Collect reward for making the bread, gameState : collectReward
+//8. Go back to step 1
+
+
 public class BakeryGameLoop : MonoBehaviour
 {
     enum Breadtype { Wheat, Baguette, Bun, SourDough, Croissant };
@@ -9,6 +20,10 @@ public class BakeryGameLoop : MonoBehaviour
     enum Breadsize { Small, Medium, Big };
 
     enum Breadcut { Thin, Thick, NoCut };
+
+    enum GameStates {readInstructions ,collectBread, bakeBread, placeBread, cutBread, finishBread, collectReward};
+
+    GameStates currentState;
 
     Breadtype ChooseBreadtype()
     {
@@ -29,8 +44,12 @@ public class BakeryGameLoop : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(ChooseBreadtype());
+        currentState = GameStates.readInstructions;
         
+    }
+    private void Update()
+    {
+        //Make a switch case to handle the different states of the game
     }
 
     Breadsize ChooseBreadsize()
