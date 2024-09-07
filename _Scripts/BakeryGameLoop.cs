@@ -26,6 +26,14 @@ public class BakeryGameLoop : MonoBehaviour
 
     GameStates currentState;
 
+    Breadtype currentType;
+
+    Breadsize currentSize;
+
+    Breadcut currentCut;
+
+    ReadInstructions readInstructions;
+
     [SerializeField]
     TextMeshProUGUI instructionText;
 
@@ -49,6 +57,7 @@ public class BakeryGameLoop : MonoBehaviour
     private void Start()
     {
         currentState = GameStates.readInstructions;
+        setParameters();
         
     }
     private void Update()
@@ -57,14 +66,30 @@ public class BakeryGameLoop : MonoBehaviour
         switch (currentState)
         {
             case GameStates.readInstructions:
-                currentState = readInstructions();
+                currentState = readInstruct();
                 break;
         }
     }
 
-    GameStates readInstructions()
+    GameStates readInstruct()
     {
+        displayInstructions();
         return GameStates.readInstructions;
+    }
+
+    private void displayInstructions()
+    {
+        string BreadType = currentType.ToString();
+        string BreadCut = currentCut.ToString();
+        string BreadSize = currentSize.ToString();
+        instructionText.SetText(BreadType);
+    }
+
+    private void setParameters()
+    {
+        currentType = ChooseBreadtype();
+        currentSize = ChooseBreadsize();
+        currentCut = ChooseBreadcut();
     }
 
     Breadsize ChooseBreadsize()
