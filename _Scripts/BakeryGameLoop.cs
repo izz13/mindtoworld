@@ -82,7 +82,8 @@ public class BakeryGameLoop : MonoBehaviour
         string BreadType = currentType.ToString();
         string BreadCut = currentCut.ToString();
         string BreadSize = currentSize.ToString();
-        instructionText.SetText(BreadType);
+        string instrusctions = BreadType + "/n" + BreadCut + "/n" + BreadSize;
+        instructionText.SetText(instrusctions);
     }
 
     private void setParameters()
