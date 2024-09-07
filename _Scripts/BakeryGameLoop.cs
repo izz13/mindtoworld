@@ -27,7 +27,7 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates currentState;
 
     [SerializeField]
-    TextMeshPro instructionText;
+    TextMeshProUGUI instructionText;
 
     Breadtype ChooseBreadtype()
     {
