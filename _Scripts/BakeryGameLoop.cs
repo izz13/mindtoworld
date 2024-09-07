@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 //The Steps For Making Bread i.e. the game states we want or game to be
 //1. Read the instructions for the type of bread to make, gameState : readInstructions
@@ -24,6 +25,9 @@ public class BakeryGameLoop : MonoBehaviour
     enum GameStates {readInstructions ,collectBread, bakeBread, placeBread, cutBread, finishBread, collectReward};
 
     GameStates currentState;
+
+    [SerializeField]
+    TextMeshPro instructionText;
 
     Breadtype ChooseBreadtype()
     {
@@ -50,6 +54,17 @@ public class BakeryGameLoop : MonoBehaviour
     private void Update()
     {
         //Make a switch case to handle the different states of the game
+        switch (currentState)
+        {
+            case GameStates.readInstructions:
+                currentState = readInstructions();
+                break;
+        }
+    }
+
+    GameStates readInstructions()
+    {
+        return GameStates.readInstructions;
     }
 
     Breadsize ChooseBreadsize()
