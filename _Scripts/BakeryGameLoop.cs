@@ -76,6 +76,10 @@ public class BakeryGameLoop : MonoBehaviour
                 currentState = collectBread();
                 break;
         }
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log("space key was pressed");
+        }
     }
 
     GameStates readInstruct()
