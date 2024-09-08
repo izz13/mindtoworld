@@ -35,6 +35,9 @@ public class BakeryGameLoop : MonoBehaviour
     ReadInstructions readInstructions;
 
     [SerializeField]
+    GameObject canvas;
+
+    [SerializeField]
     TextMeshProUGUI instructionText;
 
     Breadtype ChooseBreadtype()
@@ -68,21 +71,36 @@ public class BakeryGameLoop : MonoBehaviour
             case GameStates.readInstructions:
                 currentState = readInstruct();
                 break;
+            case GameStates.collectBread:
+                Debug.Log(currentState);
+                currentState = collectBread();
+                break;
         }
     }
 
     GameStates readInstruct()
     {
         displayInstructions();
+        if (Input.GetKeyDown("Space"))
+        {
+            canvas.SetActive(false);
+            return GameStates.collectBread;
+        }
         return GameStates.readInstructions;
+    }
+
+    GameStates collectBread()
+    {
+        instructionText.SetText("");
+        return GameStates.collectBread;
     }
 
     private void displayInstructions()
     {
-        string BreadType = currentType.ToString();
-        string BreadCut = currentCut.ToString();
-        string BreadSize = currentSize.ToString();
-        string instrusctions = BreadType + "/n" + BreadCut + "/n" + BreadSize;
+        string BreadType = "Choose type: " + currentType.ToString();
+        string BreadCut = "Choose cut: " + currentCut.ToString();
+        string BreadSize = "Choose size: " + currentSize.ToString();
+        string instrusctions = BreadType + "<br>" + BreadCut + "<br>" + BreadSize;
         instructionText.SetText(instrusctions);
     }
 
