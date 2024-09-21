@@ -16,7 +16,7 @@ using TMPro;
 
 public class BakeryGameLoop : MonoBehaviour
 {
-    enum Breadtype { Wheat, Baguette, Bun, SourDough, Croissant };
+    public enum Breadtype { Wheat, Baguette, Bun, SourDough, Croissant };
 
     enum Breadsize { Small, Medium, Big };
 
@@ -39,6 +39,9 @@ public class BakeryGameLoop : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI instructionText;
+    [SerializeField]
+    GameObject CuttingBoard;
+    CuttingSurface cuttingSurface;
 
     Breadtype ChooseBreadtype()
     {
@@ -60,6 +63,7 @@ public class BakeryGameLoop : MonoBehaviour
     private void Start()
     {
         currentState = GameStates.readInstructions;
+        cuttingSurface = CuttingBoard.GetComponent<CuttingSurface>();
         setParameters();
         
     }
@@ -81,7 +85,7 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates readInstruct()
     {
         displayInstructions();
-        if (Input.GetKeyDown("Space"))
+        if (Input.GetKeyDown("space"))
         {
             canvas.SetActive(false);
             return GameStates.collectBread;
@@ -91,7 +95,7 @@ public class BakeryGameLoop : MonoBehaviour
 
     GameStates collectBread()
     {
-        instructionText.SetText("");
+        instructionText.SetText("Please select bread");
         return GameStates.collectBread;
     }
 
