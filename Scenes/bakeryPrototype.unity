@@ -123,8 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> parent of cd3fff4 (fsdfsd)
 --- !u!1 &139200557
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +174,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &149014070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5205974959510906856, guid: bb63e02186c01421d859b98a580f83ff, type: 3}
@@ -416,6 +420,8 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of cd3fff4 (fsdfsd)
 --- !u!1001 &287371716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2138,11 +2144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f366034a4ea4b69bef07fa2b723e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   canvas: {fileID: 0}
 =======
   canvas: {fileID: 1903682430}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of cd3fff4 (fsdfsd)
   instructionText: {fileID: 2111542456}
   CuttingBoard: {fileID: 1134792955}
 --- !u!4 &1788198040
@@ -3320,6 +3329,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 410087041}
+  - {fileID: 139200559}
   - {fileID: 2124398260}
   - {fileID: 1735264986}
   - {fileID: 490158972}
