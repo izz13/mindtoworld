@@ -3,7 +3,22 @@ guid: 9ec477dcf0c614f5a9f5d5ad03713867
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bread_outside._top
+    second: {fileID: 2100000, guid: c2ba47393148d4c75ad7fc1dd8b09839, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bread_outside._top.002
+    second: {fileID: 2100000, guid: bb6c5743c1be44fc2ab861ec70010881, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pit
+    second: {fileID: 2100000, guid: 110a10794b6f14ecb830c00c4c50a1b7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -78,7 +93,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
