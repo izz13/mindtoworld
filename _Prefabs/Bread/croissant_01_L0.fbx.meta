@@ -3,7 +3,12 @@ guid: 7ffc2879047744511bef07b6debb5325
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: croissant_01_L0
+    second: {fileID: 2100000, guid: 837db7b83324946f3b701c658f3a9658, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
