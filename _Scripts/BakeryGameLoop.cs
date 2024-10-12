@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 //The Steps For Making Bread i.e. the game states we want or game to be
 //1. Read the instructions for the type of bread to make, gameState : readInstructions
@@ -43,6 +44,9 @@ public class BakeryGameLoop : MonoBehaviour
     GameObject CuttingBoard;
     CuttingSurface cuttingSurface;
 
+    [SerializeField]
+    InputActionMap actionManager;
+
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
@@ -65,7 +69,6 @@ public class BakeryGameLoop : MonoBehaviour
         currentState = GameStates.readInstructions;
         cuttingSurface = CuttingBoard.GetComponent<CuttingSurface>();
         setParameters();
-        
     }
     private void Update()
     {
@@ -85,8 +88,10 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates readInstruct()
     {
         displayInstructions();
-        if (Input.GetKeyDown("space"))
+        var select = actionManager.FindAction("Select");
+        if (select.IsPressed())
         {
+            Debug.Log("IsPressed");
             canvas.SetActive(false);
             return GameStates.collectBread;
         }

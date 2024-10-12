@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18018535, g: 0.22559482, b: 0.30677685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -991,6 +991,28 @@ MonoBehaviour:
   canvas: {fileID: 0}
   instructionText: {fileID: 1398553661}
   CuttingBoard: {fileID: 538655239}
+  actionManager:
+    m_Name: Action Manager
+    m_Id: 1629e259-4292-4124-ae62-9aa0b5b06cdb
+    m_Asset: {fileID: 0}
+    m_Actions:
+    - m_Name: Select
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 227edab7-aa40-4dce-887d-00387f79662e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name: 
+      m_Id: 9d9ac782-bf44-4541-ba90-cbd0f8ee0ca5
+      m_Path: <XRController>{RightHand}/{PrimaryButton}
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select
+      m_Flags: 0
 --- !u!4 &683430731
 Transform:
   m_ObjectHideFlags: 0
