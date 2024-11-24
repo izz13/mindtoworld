@@ -13,12 +13,16 @@ public class BreadSlicing : MonoBehaviour
     [SerializeField]
     GameObject breadLoaf;
 
+    [SerializeField]
+    GameObject breadSliced;
+
     int breadState = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        breadSliced.SetActive(false);
+        breadLoaf.SetActive(true);
     }
 
     // Update is called once per frame
@@ -35,6 +39,12 @@ public class BreadSlicing : MonoBehaviour
         if (S2.isSliced)
         {
             slice2.SetActive(false);
+        }
+
+        if (S1.isSliced && S2.isSliced)
+        {
+            breadLoaf.SetActive(false);
+            breadSliced.SetActive(true);
         }
     }
 }
