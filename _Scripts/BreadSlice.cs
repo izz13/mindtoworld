@@ -8,7 +8,7 @@ public class BreadSlice : MonoBehaviour
 
     private void Start()
     {
-        isSliced = true;
+        isSliced = false;
     }
 
     private void OnTriggerStay(Collider other)
