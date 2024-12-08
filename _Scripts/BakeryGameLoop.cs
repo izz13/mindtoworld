@@ -47,6 +47,12 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     InputActionMap actionManager;
 
+    [SerializeField]
+    GameObject okButton;
+
+    [SerializeField]
+    GameObject nextMenuButton;
+
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
@@ -87,20 +93,17 @@ public class BakeryGameLoop : MonoBehaviour
 
     GameStates readInstruct()
     {
+        //okButton.SetActive(true);
+        //nextMenuButton.SetActive(true);
         displayInstructions();
-        var select = actionManager.FindAction("Select");
-        if (select.IsPressed())
-        {
-            Debug.Log("IsPressed");
-            canvas.SetActive(false);
-            return GameStates.collectBread;
-        }
         return GameStates.readInstructions;
     }
 
     GameStates collectBread()
     {
-        instructionText.SetText("Please select bread");
+        okButton.SetActive(false);
+        nextMenuButton.SetActive(false);
+        instructionText.SetText("Please select bread " + currentType.ToString());
         return GameStates.collectBread;
     }
 
@@ -113,7 +116,7 @@ public class BakeryGameLoop : MonoBehaviour
         instructionText.SetText(instrusctions);
     }
 
-    private void setParameters()
+    public void setParameters()
     {
         currentType = ChooseBreadtype();
         currentSize = ChooseBreadsize();
@@ -147,6 +150,9 @@ public class BakeryGameLoop : MonoBehaviour
 
     }
 
-    
+    public void ChangeGameState()
+    {
+        currentState ++;
+    }
 
 }
