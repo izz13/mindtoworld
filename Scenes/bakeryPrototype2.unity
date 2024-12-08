@@ -546,7 +546,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1627,7 +1627,11 @@ Transform:
   - {fileID: 1232444801}
   m_Father: {fileID: 2096568064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
+--- !u!4 &1002146677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6854820956659770654, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
+  m_PrefabInstance: {fileID: 7826036378839161977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1065316766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,13 +1685,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
---- !u!4 &1002146677 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6854820956659770654, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
-  m_PrefabInstance: {fileID: 7826036378839161977}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!114 &1101817962 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7108444610774224822, guid: 5791e9327fb3c4e4db97b0a274c1eb62, type: 3}
@@ -3605,9 +3602,5 @@ SceneRoots:
   - {fileID: 2096568064}
   - {fileID: 59940618}
   - {fileID: 1534242992}
-<<<<<<< Updated upstream
-  - {fileID: 7826036378839161977}
   - {fileID: 1065316768}
-=======
   - {fileID: 162890073}
->>>>>>> Stashed changes
