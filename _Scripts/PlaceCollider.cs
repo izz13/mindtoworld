@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaceCollider : MonoBehaviour
 {
-    public string objectName;
+    public string objectName = "";
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
