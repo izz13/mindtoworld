@@ -23,9 +23,9 @@ public class BakeryGameLoop : MonoBehaviour
 
     enum Breadcut { Thin, Thick, NoCut };
 
-    enum GameStates {readInstructions ,collectBread, bakeBread, placeBread, cutBread, finishBread, collectReward};
+    public enum GameStates {readInstructions ,collectBread, bakeBread, placeBread, cutBread, finishBread, collectReward};
 
-    GameStates currentState;
+    public GameStates currentState;
 
     Breadtype currentType;
 
@@ -52,6 +52,10 @@ public class BakeryGameLoop : MonoBehaviour
 
     [SerializeField]
     GameObject nextMenuButton;
+
+    
+    [SerializeField]
+    PlaceCollider pc;
 
     Breadtype ChooseBreadtype()
     {
@@ -85,7 +89,6 @@ public class BakeryGameLoop : MonoBehaviour
                 currentState = readInstruct();
                 break;
             case GameStates.collectBread:
-                Debug.Log(currentState);
                 currentState = collectBread();
                 break;
             case GameStates.bakeBread:
@@ -106,8 +109,22 @@ public class BakeryGameLoop : MonoBehaviour
     {
         okButton.SetActive(false);
         nextMenuButton.SetActive(false);
-        instructionText.SetText("Please select bread " + currentType.ToString());
-        return GameStates.collectBread;
+        
+        if (pc.objectName == currentType.ToString())
+        {
+            instructionText.SetText("You placed the correct bread.");
+            return GameStates.bakeBread;
+        }
+        else if (pc.objectName == "")
+        {
+            instructionText.SetText("Please select bread " + currentType.ToString());
+            return GameStates.collectBread;
+        }
+        else
+        {
+            instructionText.SetText("You placed the wrong bread");
+            return GameStates.collectBread;
+        }
     }
 
     GameStates bakeBread()
@@ -115,6 +132,8 @@ public class BakeryGameLoop : MonoBehaviour
         instructionText.SetText("Please put bread in oven.");
         return GameStates.bakeBread;
     }
+
+
 
     private void displayInstructions()
     {
