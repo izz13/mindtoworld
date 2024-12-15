@@ -10,15 +10,34 @@ public class OpenOven : MonoBehaviour
     [SerializeField]
     GameObject closedOven;
 
+    [SerializeField]
+    OvenCollider oc;
+
     void Start()
     {
         openedOven.SetActive(false);
         closedOven.SetActive(true);
     }
 
-    public void HandlePressed()
+    void Update()
+    {
+        if (oc.ovenCollided == true) 
+        {
+            OpenOvenDoor();
+        }
+        //if (oc.ovenCollided == false)
+        //{
+        //    ClosedDoor();
+        //}
+    }
+    public void OpenOvenDoor()
     {
         openedOven.SetActive(true);
         closedOven.SetActive(false);
     }
+    //public void ClosedDoor()
+    //{
+    //    openedOven.SetActive(false);
+    //    closedOven.SetActive(true);
+    //}
 }
