@@ -57,6 +57,12 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     PlaceCollider pc;
 
+    [SerializeField]
+    OpenOven openOven;
+
+    [SerializeField]
+    BakeCollider bakeCollider;
+
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
@@ -113,6 +119,7 @@ public class BakeryGameLoop : MonoBehaviour
         if (pc.objectName == currentType.ToString())
         {
             instructionText.SetText("You placed the correct bread.");
+            openOven.OpenOvenDoor();
             return GameStates.bakeBread;
         }
         else if (pc.objectName == "")

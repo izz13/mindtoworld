@@ -2072,15 +2072,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e51d865f160974ea6b15a4c007a2c6a9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e51d865f160974ea6b15a4c007a2c6a9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e51d865f160974ea6b15a4c007a2c6a9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e51d865f160974ea6b15a4c007a2c6a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2132,7 +2132,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e51d865f160974ea6b15a4c007a2c6a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2129141024}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e51d865f160974ea6b15a4c007a2c6a9, type: 3}
 --- !u!4 &622925674 stripped
@@ -2588,6 +2591,8 @@ MonoBehaviour:
   okButton: {fileID: 564972332}
   nextMenuButton: {fileID: 1486078766}
   pc: {fileID: 183708622}
+  openOven: {fileID: 19338396}
+  bakeCollider: {fileID: 2129141026}
 --- !u!4 &1065316768
 Transform:
   m_ObjectHideFlags: 0
@@ -2851,15 +2856,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2a56cc86ba7c841d580a4d7c0b5bf74a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a56cc86ba7c841d580a4d7c0b5bf74a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a56cc86ba7c841d580a4d7c0b5bf74a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a56cc86ba7c841d580a4d7c0b5bf74a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2908,6 +2913,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2a56cc86ba7c841d580a4d7c0b5bf74a, type: 3}
       propertyPath: m_Name
       value: closed_oven
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a56cc86ba7c841d580a4d7c0b5bf74a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3235,12 +3244,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1288902165 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3722230882064615889, guid: 5791e9327fb3c4e4db97b0a274c1eb62, type: 3}
@@ -3259,12 +3268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ovenCollided: 0
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
 --- !u!1001 &1330996007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4991,6 +4994,73 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 2096568063}
+--- !u!1 &2129141023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129141024}
+  - component: {fileID: 2129141025}
+  - component: {fileID: 2129141026}
+  m_Layer: 0
+  m_Name: BakeCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2129141024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129141023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.318, y: 2.169, z: 1.28}
+  m_LocalScale: {x: 2.6237, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 622925674}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2129141025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129141023}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2129141026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129141023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ef3fa2ada6047439f8e4decc7c277b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
 --- !u!1001 &3045832935607882379
 PrefabInstance:
   m_ObjectHideFlags: 0
