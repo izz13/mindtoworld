@@ -53,6 +53,11 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     GameObject nextMenuButton;
 
+    [SerializeField]
+    GameObject placeCollider;
+
+    PlaceCollider pc;
+
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
@@ -74,6 +79,7 @@ public class BakeryGameLoop : MonoBehaviour
     {
         currentState = GameStates.readInstructions;
         cuttingSurface = CuttingBoard.GetComponent<CuttingSurface>();
+        pc = placeCollider.GetComponent<PlaceCollider>();
         setParameters();
     }
     private void Update()
@@ -107,7 +113,14 @@ public class BakeryGameLoop : MonoBehaviour
         okButton.SetActive(false);
         nextMenuButton.SetActive(false);
         instructionText.SetText("Please select bread " + currentType.ToString());
-        return GameStates.collectBread;
+        if (pc.objectName == currentType.ToString())
+        {
+            return GameStates.bakeBread;
+        }
+        else
+        {
+            return GameStates.collectBread;
+        }
     }
 
     GameStates bakeBread()
@@ -115,6 +128,8 @@ public class BakeryGameLoop : MonoBehaviour
         instructionText.SetText("Please put bread in oven.");
         return GameStates.bakeBread;
     }
+
+
 
     private void displayInstructions()
     {

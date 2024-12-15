@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlaceCollider : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public string objectName;
+    public void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
+
+        objectName = other.gameObject.name;
     }
 }
