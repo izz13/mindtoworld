@@ -112,15 +112,19 @@ public class BakeryGameLoop : MonoBehaviour
     {
         okButton.SetActive(false);
         nextMenuButton.SetActive(false);
-        instructionText.SetText("Please select bread " + currentType.ToString());
-        if (pc.objectName == currentType.ToString())
-        {
-            return GameStates.bakeBread;
-        }
-        else
-        {
-            return GameStates.collectBread;
-        }
+        instructionText.SetText(pc.objectName);
+        return GameStates.collectBread;
+        //instructionText.SetText("Please select bread " + currentType.ToString());
+        //if (pc.objectName == currentType.ToString())
+        //{
+        //    instructionText.SetText("You placed the correct bread.");
+        //    return GameStates.collectBread;
+        //}
+        //else
+        //{
+        //    instructionText.SetText("You placed the wrong bread");
+        //    return GameStates.collectBread;
+        //}
     }
 
     GameStates bakeBread()
