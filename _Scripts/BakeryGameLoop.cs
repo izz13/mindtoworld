@@ -88,6 +88,9 @@ public class BakeryGameLoop : MonoBehaviour
                 Debug.Log(currentState);
                 currentState = collectBread();
                 break;
+            case GameStates.bakeBread:
+                currentState = bakeBread();
+                break;
         }
     }
 
@@ -105,6 +108,12 @@ public class BakeryGameLoop : MonoBehaviour
         nextMenuButton.SetActive(false);
         instructionText.SetText("Please select bread " + currentType.ToString());
         return GameStates.collectBread;
+    }
+
+    GameStates bakeBread()
+    {
+        instructionText.SetText("Please put bread in oven.");
+        return GameStates.bakeBread;
     }
 
     private void displayInstructions()
