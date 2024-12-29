@@ -13,6 +13,8 @@ public class OpenOven : MonoBehaviour
     [SerializeField]
     OvenCollider oc;
 
+  
+
     void Start()
     {
         openedOven.SetActive(false);
@@ -21,23 +23,16 @@ public class OpenOven : MonoBehaviour
 
     void Update()
     {
-        if (oc.ovenCollided == true) 
-        {
-            OpenOvenDoor();
-        }
-        //if (oc.ovenCollided == false)
-        //{
-        //    ClosedDoor();
-        //}
+
     }
     public void OpenOvenDoor()
     {
         openedOven.SetActive(true);
         closedOven.SetActive(false);
     }
-    //public void ClosedDoor()
-    //{
-    //    openedOven.SetActive(false);
-    //    closedOven.SetActive(true);
-    //}
+    public void ClosedDoor()
+    {
+        openedOven.SetActive(false);
+        closedOven.SetActive(true);
+    }
 }

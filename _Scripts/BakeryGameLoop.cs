@@ -27,6 +27,10 @@ public class BakeryGameLoop : MonoBehaviour
 
     public GameStates currentState;
 
+    float bakeTimer = 0f;
+
+    float bakeCooldown = 3f;
+
     Breadtype currentType;
 
     Breadsize currentSize;
@@ -62,6 +66,8 @@ public class BakeryGameLoop : MonoBehaviour
 
     [SerializeField]
     BakeCollider bakeCollider;
+
+    GameObject heldBread;
 
     Breadtype ChooseBreadtype()
     {
@@ -120,6 +126,7 @@ public class BakeryGameLoop : MonoBehaviour
         {
             instructionText.SetText("You placed the correct bread.");
             openOven.OpenOvenDoor();
+            heldBread = pc.bread;
             return GameStates.bakeBread;
         }
         else if (pc.objectName == "")
@@ -137,6 +144,34 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates bakeBread()
     {
         instructionText.SetText("Please put bread in oven.");
+        if (bakeCollider.objectName == currentType.ToString())
+        {
+            if (bakeTimer < bakeCooldown)
+            {
+                if (bakeTimer <= 0f)
+                {
+                    openOven.ClosedDoor();
+                    heldBread.SetActive(false);
+
+                }
+                bakeTimer += Time.deltaTime;
+                return GameStates.bakeBread;
+
+            }
+            else
+            {
+                Bread bread = heldBread.GetComponent<Bread>();
+                Rigidbody breadRB = heldBread.GetComponent<Rigidbody>();
+                breadRB.velocity = new Vector3(0f, 0f, 0f);
+                Vector3 sPos = bread.startPos;
+                heldBread.transform.position = sPos;
+                heldBread.SetActive(true);
+                bakeTimer = 0f;
+                return GameStates.placeBread;
+            }
+
+            
+        }
         return GameStates.bakeBread;
     }
 
