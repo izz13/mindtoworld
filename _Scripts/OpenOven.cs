@@ -35,4 +35,16 @@ public class OpenOven : MonoBehaviour
         openedOven.SetActive(false);
         closedOven.SetActive(true);
     }
+
+    public bool isOpen()
+    {
+        if (openedOven.activeSelf) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
 }

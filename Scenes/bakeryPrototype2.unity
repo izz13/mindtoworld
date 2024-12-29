@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18018535, g: 0.22559482, b: 0.30677685, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2174,6 +2174,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e51d865f160974ea6b15a4c007a2c6a9, type: 3}
   m_PrefabInstance: {fileID: 622925673}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &693335311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693335312}
+  - component: {fileID: 693335314}
+  - component: {fileID: 693335313}
+  m_Layer: 0
+  m_Name: PlaceCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693335312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693335311}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.259, y: 0.969, z: 0.079}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 901500612}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693335313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693335311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e27ccf63b0ed40a4bedaa39e34caf32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
+  bread: {fileID: 0}
+--- !u!65 &693335314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693335311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &739293136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3815078705760808254, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
@@ -2624,6 +2692,8 @@ MonoBehaviour:
   pc: {fileID: 183708622}
   openOven: {fileID: 19338396}
   bakeCollider: {fileID: 2129141026}
+  breadSlicing: {fileID: 1703631814}
+  slicingBreadPrefab: {fileID: 6854820956659770654, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
 --- !u!4 &1065316768
 Transform:
   m_ObjectHideFlags: 0
@@ -3344,12 +3414,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1288902165 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3722230882064615889, guid: 5791e9327fb3c4e4db97b0a274c1eb62, type: 3}
@@ -3761,7 +3831,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6188505525709655194, guid: f290f489f4196974db7a37718d9fa4c3, type: 3}
       propertyPath: m_Name
-      value: Table_Dining_Traditional_Dark
+      value: CuttingTable
       objectReference: {fileID: 0}
     - target: {fileID: 6821313309137376800, guid: f290f489f4196974db7a37718d9fa4c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3805,7 +3875,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6821313309137376800, guid: f290f489f4196974db7a37718d9fa4c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 693335312}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f290f489f4196974db7a37718d9fa4c3, type: 3}
 --- !u!1 &1534242987
@@ -4385,6 +4458,17 @@ Transform:
   - {fileID: 183708621}
   m_Father: {fileID: 1105141407}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1703631814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6610215274354256161, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
+  m_PrefabInstance: {fileID: 7826036378839161977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38ccba2345a94f63bcaf291200e4db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1891118576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4998,12 +5082,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &2096568061
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,7 +5289,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 611424418549018442, guid: 50d6f63d918e04f15bf7f522896220a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.37337303
+      value: 0.472
       objectReference: {fileID: 0}
     - target: {fileID: 611424418549018442, guid: 50d6f63d918e04f15bf7f522896220a1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5213,7 +5297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 611424418549018442, guid: 50d6f63d918e04f15bf7f522896220a1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2884318
+      value: 0.546
       objectReference: {fileID: 0}
     - target: {fileID: 611424418549018442, guid: 50d6f63d918e04f15bf7f522896220a1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5271,6 +5355,10 @@ PrefabInstance:
     - target: {fileID: 200935743237891921, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
       propertyPath: m_Name
       value: Bread
+      objectReference: {fileID: 0}
+    - target: {fileID: 200935743237891921, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1978773449710852858, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
       propertyPath: m_IsTrigger

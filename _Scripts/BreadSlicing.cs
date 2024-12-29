@@ -21,8 +21,8 @@ public class BreadSlicing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        breadSliced.SetActive(false);
-        breadLoaf.SetActive(true);
+        //breadSliced.SetActive(false);
+        //breadLoaf.SetActive(true);
     }
 
     // Update is called once per frame

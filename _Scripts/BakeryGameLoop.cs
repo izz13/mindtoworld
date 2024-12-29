@@ -67,6 +67,12 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     BakeCollider bakeCollider;
 
+    [SerializeField]
+    BreadSlicing breadSlicing;
+
+    [SerializeField]
+    Transform slicingBreadPrefab;
+
     GameObject heldBread;
 
     Breadtype ChooseBreadtype()
@@ -105,6 +111,9 @@ public class BakeryGameLoop : MonoBehaviour
                 break;
             case GameStates.bakeBread:
                 currentState = bakeBread();
+                break;
+            case GameStates.placeBread:
+                currentState = placeBread();
                 break;
         }
     }
@@ -155,7 +164,8 @@ public class BakeryGameLoop : MonoBehaviour
 
                 }
                 bakeTimer += Time.deltaTime;
-                instructionText.SetText(bakeTimer.ToString());
+                int countDown = Mathf.CeilToInt(bakeCooldown - bakeTimer);
+                instructionText.SetText(countDown.ToString());
                 return GameStates.bakeBread;
 
             }
@@ -174,6 +184,21 @@ public class BakeryGameLoop : MonoBehaviour
             
         }
         return GameStates.bakeBread;
+    }
+
+    GameStates placeBread()
+    {
+        instructionText.SetText("Please place bread on cutting table");
+        if (!openOven.isOpen())
+        {
+            openOven.OpenOvenDoor();
+            Transform br = Instantiate(slicingBreadPrefab);
+            br.position = openOven.gameObject.transform.position;
+            br.position += br.up;
+            br.position -= br.right;
+        }
+        
+        return GameStates.placeBread;
     }
 
 
