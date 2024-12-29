@@ -155,6 +155,7 @@ public class BakeryGameLoop : MonoBehaviour
 
                 }
                 bakeTimer += Time.deltaTime;
+                Debug.Log(bakeTimer);
                 return GameStates.bakeBread;
 
             }

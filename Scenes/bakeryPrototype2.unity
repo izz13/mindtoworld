@@ -4196,11 +4196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -784972838847356517, guid: dffeeab7a21604795b2d6ec74129049d, type: 3}
       propertyPath: startPos.x
-      value: -3.9
+      value: -4.714
       objectReference: {fileID: 0}
     - target: {fileID: -784972838847356517, guid: dffeeab7a21604795b2d6ec74129049d, type: 3}
       propertyPath: startPos.y
-      value: -0.65
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: -784972838847356517, guid: dffeeab7a21604795b2d6ec74129049d, type: 3}
       propertyPath: startPos.z
