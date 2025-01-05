@@ -199,6 +199,7 @@ public class BakeryGameLoop : MonoBehaviour
             br.position = openOven.gameObject.transform.position;
             br.position += br.up;
             br.position -= br.right;
+            br.gameObject.SetActive(true);
         }
 
         if (cuttingSurface.IsBreadOnCuttingBoard(heldBread))
