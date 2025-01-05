@@ -115,6 +115,9 @@ public class BakeryGameLoop : MonoBehaviour
             case GameStates.placeBread:
                 currentState = placeBread();
                 break;
+            case GameStates.cutBread:
+                currentState = cutBread();
+                break;
         }
     }
 
@@ -201,7 +204,11 @@ public class BakeryGameLoop : MonoBehaviour
         return GameStates.placeBread;
     }
 
-
+    GameStates cutBread()
+    {
+        instructionText.SetText("Please cut the bread");
+        return GameStates.cutBread;
+    }
 
     private void displayInstructions()
     {
