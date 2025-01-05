@@ -9,4 +9,19 @@ public class CuttingSurface : MonoBehaviour
     {
         cuttingPosition = transform.position + transform.up * 1.5f;
     }
+
+    private bool breadOnBoard = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject)
+        {
+            breadOnBoard = true;
+        }
+    }
+
+    public bool IsBreadOnCuttingBoard(GameObject bread)
+    {
+        return breadOnBoard && bread != null;
+    }
 }

@@ -200,7 +200,13 @@ public class BakeryGameLoop : MonoBehaviour
             br.position += br.up;
             br.position -= br.right;
         }
-        
+
+        if (cuttingSurface.IsBreadOnCuttingBoard(heldBread))
+        {
+            instructionText.SetText("Bread placed on the cutting table. Returning to instructions...");
+            return GameStates.readInstructions;
+        }
+
         return GameStates.placeBread;
     }
 
