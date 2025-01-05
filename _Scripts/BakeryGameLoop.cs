@@ -204,8 +204,8 @@ public class BakeryGameLoop : MonoBehaviour
 
         if (cuttingSurface.IsBreadOnCuttingBoard(heldBread))
         {
-            instructionText.SetText("Bread placed on the cutting table. Returning to instructions...");
-            return GameStates.readInstructions;
+            instructionText.SetText("Cut Bread");
+            return GameStates.cutBread;
         }
 
         return GameStates.placeBread;
