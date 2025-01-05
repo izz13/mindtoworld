@@ -67,7 +67,6 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     BakeCollider bakeCollider;
 
-    [SerializeField]
     BreadSlicing breadSlicing;
 
     [SerializeField]
@@ -75,10 +74,12 @@ public class BakeryGameLoop : MonoBehaviour
 
     GameObject heldBread;
 
+
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
-        int RandomInt = Random.Range(0, BreadtypeCount);
+        //int RandomInt = Random.Range(0, BreadtypeCount);
+        int RandomInt = 0;
         if (RandomInt == 0)
             return Breadtype.Wheat;
         else if (RandomInt == 1)
@@ -200,9 +201,10 @@ public class BakeryGameLoop : MonoBehaviour
             br.position += br.up;
             br.position -= br.right;
             br.gameObject.SetActive(true);
+            breadSlicing = br.GetComponent<BreadSlicing>();
         }
 
-        if (cuttingSurface.IsBreadOnCuttingBoard(heldBread))
+        if (cuttingSurface.IsBreadOnCuttingBoard(breadSlicing.gameObject))
         {
             instructionText.SetText("Cut Bread");
             return GameStates.cutBread;

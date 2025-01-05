@@ -5,6 +5,7 @@ using UnityEngine;
 public class CuttingSurface : MonoBehaviour
 {
     public Vector3 cuttingPosition;
+
     private void Start()
     {
         cuttingPosition = transform.position + transform.up * 1.5f;
@@ -14,7 +15,8 @@ public class CuttingSurface : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject)
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Bread")
         {
             breadOnBoard = true;
         }
@@ -22,6 +24,7 @@ public class CuttingSurface : MonoBehaviour
 
     public bool IsBreadOnCuttingBoard(GameObject bread)
     {
-        return breadOnBoard && bread != null;
+
+        return breadOnBoard;
     }
 }
