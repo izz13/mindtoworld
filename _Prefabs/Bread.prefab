@@ -52,7 +52,8 @@ MonoBehaviour:
   slice1: {fileID: 3587838058255903986}
   slice2: {fileID: 1077696723061942358}
   breadLoaf: {fileID: 3815078705760808254}
-  breadSliced: {fileID: 0}
+  breadSliced: {fileID: 1344368014498603719}
+  isBreadSliced: 0
 --- !u!54 &6018098692028725756
 Rigidbody:
   m_ObjectHideFlags: 0

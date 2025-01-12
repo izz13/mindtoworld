@@ -16,7 +16,7 @@ public class BreadSlicing : MonoBehaviour
     [SerializeField]
     GameObject breadSliced;
 
-    bool isBreadSliced = false;
+    public bool isBreadSliced = false;
 
     int breadState = 0;
 
@@ -45,6 +45,7 @@ public class BreadSlicing : MonoBehaviour
 
         if (S1.isSliced && S2.isSliced)
         {
+            Debug.Log("bread is sliced");
             breadLoaf.SetActive(false);
             breadSliced.SetActive(true);
             isBreadSliced = true;
