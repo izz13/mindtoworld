@@ -73,8 +73,19 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     Transform slicingBreadPrefab;
 
+    [SerializeField]
+    Transform platePrefab;
+
+    PlateCollider plateCollider;
+
     GameObject heldBread;
 
+<<<<<<< Updated upstream
+=======
+    bool hasPlateSpawned = false;
+
+
+>>>>>>> Stashed changes
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
@@ -97,6 +108,7 @@ public class BakeryGameLoop : MonoBehaviour
         currentState = GameStates.readInstructions;
         cuttingSurface = CuttingBoard.GetComponent<CuttingSurface>();
         setParameters();
+        
     }
     private void Update()
     {
@@ -118,6 +130,15 @@ public class BakeryGameLoop : MonoBehaviour
             case GameStates.cutBread:
                 currentState = cutBread();
                 break;
+<<<<<<< Updated upstream
+=======
+            case GameStates.finishBread:
+                currentState = finishBread();
+                break;
+            case GameStates.collectReward:
+                currentState = collectReward();
+                break;
+>>>>>>> Stashed changes
         }
     }
 
@@ -204,10 +225,61 @@ public class BakeryGameLoop : MonoBehaviour
         return GameStates.placeBread;
     }
 
+    void SpawnPlate()
+    {
+        Transform plate = Instantiate(platePrefab);
+        GameObject placeTable = GameObject.FindGameObjectWithTag("PlaceTable");
+        plateCollider = plate.gameObject.GetComponentInChildren<PlateCollider>();
+        if (placeTable != null)
+        {
+            Vector3 placePosition = placeTable.transform.position;
+            plate.transform.position = new Vector3(placePosition.x, placePosition.y+ 1, placePosition.z);
+        }
+
+    }
+
     GameStates cutBread()
     {
         instructionText.SetText("Please cut the bread");
+<<<<<<< Updated upstream
         return GameStates.cutBread;
+=======
+        if (breadSlicing.getBreadSliced())
+        {
+            SpawnPlate();
+            return GameStates.finishBread;
+        }
+        else
+        {
+            return GameStates.cutBread;
+
+        }
+    }
+
+    GameStates finishBread()
+    {
+        instructionText.SetText("Please plate sliced bread");
+        //if (!hasPlateSpawned)
+        //{
+        //    SpawnPlate();
+        //    hasPlateSpawned = true;
+        //}
+        if (plateCollider.getHasBread())
+        {
+            return GameStates.collectReward;
+        }
+        else
+        {
+            return GameStates.finishBread;
+        }
+        
+    }
+
+    GameStates collectReward()
+    {
+        instructionText.SetText("Please place plate with bread at reward station to collect reward!!!");
+        return GameStates.collectReward;
+>>>>>>> Stashed changes
     }
 
     private void displayInstructions()
