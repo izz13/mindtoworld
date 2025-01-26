@@ -31,6 +31,8 @@ public class BakeryGameLoop : MonoBehaviour
 
     float bakeCooldown = 3f;
 
+    int points = 0;
+
     Breadtype currentType;
 
     Breadsize currentSize;
@@ -44,6 +46,9 @@ public class BakeryGameLoop : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI instructionText;
+
+    [SerializeField]
+    TextMeshProUGUI pointText;
 
     [SerializeField]
     GameObject CuttingBoard;
@@ -135,6 +140,7 @@ public class BakeryGameLoop : MonoBehaviour
                 currentState = collectReward();
                 break;
         }
+        pointText.SetText(points.ToString());
     }
 
     GameStates readInstruct()
