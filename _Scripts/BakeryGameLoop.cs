@@ -244,7 +244,7 @@ public class BakeryGameLoop : MonoBehaviour
         instructionText.SetText("Please cut the bread");
         if (breadSlicing.getBreadSliced())
         {
-            SpawnPlate();
+            //SpawnPlate();
             return GameStates.finishBread;
         }
         else
@@ -257,11 +257,11 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates finishBread()
     {
         instructionText.SetText("Please plate sliced bread");
-        //if (!hasPlateSpawned)
-        //{
-        //    SpawnPlate();
-        //    hasPlateSpawned = true;
-        //}
+        if (!hasPlateSpawned)
+        {
+            SpawnPlate();
+            hasPlateSpawned = true;
+        }
         if (plateCollider.getHasBread())
         {
             return GameStates.collectReward;
