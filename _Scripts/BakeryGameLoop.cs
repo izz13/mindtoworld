@@ -44,6 +44,7 @@ public class BakeryGameLoop : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI instructionText;
+
     [SerializeField]
     GameObject CuttingBoard;
     CuttingSurface cuttingSurface;
@@ -56,7 +57,6 @@ public class BakeryGameLoop : MonoBehaviour
 
     [SerializeField]
     GameObject nextMenuButton;
-
     
     [SerializeField]
     PlaceCollider pc;
@@ -67,6 +67,7 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     BakeCollider bakeCollider;
 
+    [SerializeField]
     BreadSlicing breadSlicing;
 
     [SerializeField]
@@ -74,12 +75,10 @@ public class BakeryGameLoop : MonoBehaviour
 
     GameObject heldBread;
 
-
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
-        //int RandomInt = Random.Range(0, BreadtypeCount);
-        int RandomInt = 0;
+        int RandomInt = Random.Range(0, BreadtypeCount);
         if (RandomInt == 0)
             return Breadtype.Wheat;
         else if (RandomInt == 1)
@@ -118,9 +117,6 @@ public class BakeryGameLoop : MonoBehaviour
                 break;
             case GameStates.cutBread:
                 currentState = cutBread();
-                break;
-            case GameStates.finishBread:
-                currentState = finishBread();
                 break;
         }
     }
@@ -203,37 +199,15 @@ public class BakeryGameLoop : MonoBehaviour
             br.position = openOven.gameObject.transform.position;
             br.position += br.up;
             br.position -= br.right;
-            br.gameObject.SetActive(true);
-            breadSlicing = br.GetComponent<BreadSlicing>();
         }
-
-        if (cuttingSurface.IsBreadOnCuttingBoard(breadSlicing.gameObject))
-        {
-            instructionText.SetText("Cut Bread");
-            return GameStates.cutBread;
-        }
-
+        
         return GameStates.placeBread;
     }
 
     GameStates cutBread()
     {
         instructionText.SetText("Please cut the bread");
-        if (breadSlicing.getBreadSliced())
-        {
-            return GameStates.finishBread;
-        }
-        else
-        {
-            return GameStates.cutBread;
-
-        }
-    }
-
-    GameStates finishBread()
-    {
-        instructionText.SetText("Please plate sliced bread");
-        return GameStates.finishBread;
+        return GameStates.cutBread;
     }
 
     private void displayInstructions()
