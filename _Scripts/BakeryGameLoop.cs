@@ -134,7 +134,10 @@ public class BakeryGameLoop : MonoBehaviour
             case GameStates.collectReward:
                 currentState = collectReward();
                 break;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         }
     }
 
