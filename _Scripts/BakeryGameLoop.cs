@@ -236,7 +236,6 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates cutBread()
     {
         instructionText.SetText("Please cut the bread");
-        return GameStates.cutBread;
         if (breadSlicing.getBreadSliced())
         {
             SpawnPlate();
