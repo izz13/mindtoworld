@@ -3168,7 +3168,7 @@ MonoBehaviour:
   pc: {fileID: 183708622}
   openOven: {fileID: 19338396}
   bakeCollider: {fileID: 2129141026}
-  breadSlicing: {fileID: 0}
+  breadSlicing: {fileID: 6610215274354256161, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
   slicingBreadPrefab: {fileID: 6854820956659770654, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
   platePrefab: {fileID: 8322595815523387263, guid: 29008439ecc5d4487bd807256dc7e2d9, type: 3}
 --- !u!4 &1065316768

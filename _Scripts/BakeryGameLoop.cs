@@ -52,6 +52,7 @@ public class BakeryGameLoop : MonoBehaviour
 
     [SerializeField]
     GameObject CuttingBoard;
+
     CuttingSurface cuttingSurface;
 
     [SerializeField]
@@ -91,7 +92,8 @@ public class BakeryGameLoop : MonoBehaviour
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
-        int RandomInt = Random.Range(0, BreadtypeCount);
+        //int RandomInt = Random.Range(0, BreadtypeCount);
+        int RandomInt = 0;
         if (RandomInt == 0)
             return Breadtype.Wheat;
         else if (RandomInt == 1)
@@ -109,6 +111,7 @@ public class BakeryGameLoop : MonoBehaviour
     {
         currentState = GameStates.readInstructions;
         cuttingSurface = CuttingBoard.GetComponent<CuttingSurface>();
+      
         setParameters();
         
     }
@@ -222,8 +225,16 @@ public class BakeryGameLoop : MonoBehaviour
             br.position += br.up;
             br.position -= br.right;
         }
+        if (cuttingSurface.IsBreadOnCuttingBoard())
+        {
+            return GameStates.cutBread;
+        }
+        else
+        {
+            return GameStates.placeBread;
+        }
         
-        return GameStates.placeBread;
+        
     }
 
     void SpawnPlate()

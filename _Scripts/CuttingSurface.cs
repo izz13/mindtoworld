@@ -22,7 +22,7 @@ public class CuttingSurface : MonoBehaviour
         }
     }
 
-    public bool IsBreadOnCuttingBoard(GameObject bread)
+    public bool IsBreadOnCuttingBoard()
     {
 
         return breadOnBoard;
