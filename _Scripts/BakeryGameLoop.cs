@@ -82,6 +82,7 @@ public class BakeryGameLoop : MonoBehaviour
 
     bool hasPlateSpawned = false;
 
+
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
@@ -272,7 +273,6 @@ public class BakeryGameLoop : MonoBehaviour
     {
         instructionText.SetText("Please place plate with bread at reward station to collect reward!!!");
         return GameStates.collectReward;
-
     }
 
     private void displayInstructions()
