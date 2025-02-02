@@ -82,6 +82,10 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     Transform platePrefab;
 
+    [SerializeField]
+    CollectableCollider collectableCollider;
+
+
     PlateCollider plateCollider;
 
     GameObject heldBread;
@@ -293,7 +297,19 @@ public class BakeryGameLoop : MonoBehaviour
         Transform plateTransform = plateCollider.gameObject.transform;
         Transform breadTransform = breadSlicing.gameObject.transform;
         breadTransform.position = plateTransform.position;
-        return GameStates.collectReward;
+        if (collectableCollider.getHasBread())
+        {
+            points += 1;
+            setParameters();
+            Destroy(plateCollider.gameObject);
+            Destroy(breadSlicing.gameObject);
+            return GameStates.readInstructions;
+        }
+        else
+        {
+            return GameStates.collectReward;
+        }
+        
     }
 
     private void displayInstructions()
