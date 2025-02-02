@@ -85,6 +85,12 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     CollectableCollider collectableCollider;
 
+    [SerializeField]
+    GameObject knife;
+
+    [SerializeField]
+    Vector3 knifeStartPos;
+
 
     PlateCollider plateCollider;
 
@@ -115,6 +121,7 @@ public class BakeryGameLoop : MonoBehaviour
     {
         currentState = GameStates.readInstructions;
         cuttingSurface = CuttingBoard.GetComponent<CuttingSurface>();
+        knife.transform.position = knifeStartPos;
       
         setParameters();
         
@@ -303,6 +310,11 @@ public class BakeryGameLoop : MonoBehaviour
             setParameters();
             Destroy(plateCollider.transform.parent.gameObject);
             Destroy(breadSlicing.gameObject);
+            okButton.SetActive(true);
+            nextMenuButton.SetActive(true);
+            openOven.ClosedDoor();
+            knife.transform.position = knifeStartPos;
+            
             return GameStates.readInstructions;
         }
         else

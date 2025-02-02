@@ -923,6 +923,11 @@ Transform:
   - {fileID: 2048908140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &340413174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 775147451336236200, guid: 50d6f63d918e04f15bf7f522896220a1, type: 3}
+  m_PrefabInstance: {fileID: 3045832935607882379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &379633346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,6 +3214,8 @@ MonoBehaviour:
   slicingBreadPrefab: {fileID: 6854820956659770654, guid: 14dffa9f3856f47198ed2aee75bc9c7f, type: 3}
   platePrefab: {fileID: 8322595815523387263, guid: 29008439ecc5d4487bd807256dc7e2d9, type: 3}
   collectableCollider: {fileID: 27993939}
+  knife: {fileID: 340413174}
+  knifeStartPos: {x: 0.5, y: 1, z: 0.5}
 --- !u!4 &1065316768
 Transform:
   m_ObjectHideFlags: 0
