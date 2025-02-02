@@ -301,8 +301,7 @@ public class BakeryGameLoop : MonoBehaviour
         {
             points += 1;
             setParameters();
-            GameObject plate = plateTransform.gameObject.GetComponentInParent<GameObject>();
-            Destroy(plate);
+            Destroy(plateCollider.transform.parent.gameObject);
             Destroy(breadSlicing.gameObject);
             return GameStates.readInstructions;
         }
