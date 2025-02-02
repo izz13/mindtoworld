@@ -6,6 +6,7 @@ public class PlateCollider : MonoBehaviour
 {
     bool hasBread;
 
+
     private void Start()
     {
         hasBread = false;

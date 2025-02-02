@@ -290,6 +290,9 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates collectReward()
     {
         instructionText.SetText("Please place plate with bread at reward station to collect reward!!!");
+        Transform plateTransform = plateCollider.gameObject.transform;
+        Transform breadTransform = breadSlicing.gameObject.transform;
+        breadTransform.position = plateTransform.position;
         return GameStates.collectReward;
     }
 
