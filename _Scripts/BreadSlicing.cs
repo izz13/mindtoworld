@@ -45,7 +45,7 @@ public class BreadSlicing : MonoBehaviour
 
         if (S1.isSliced && S2.isSliced)
         {
-            Debug.Log("bread is sliced");
+        //    Debug.Log("bread is sliced");
             breadLoaf.SetActive(false);
             breadSliced.SetActive(true);
             isBreadSliced = true;

@@ -16,8 +16,10 @@ public class PlateCollider : MonoBehaviour
         return hasBread;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Bread")
         {
             hasBread = true;

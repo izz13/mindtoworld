@@ -73,7 +73,7 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     BakeCollider bakeCollider;
 
-    [SerializeField]
+    //[SerializeField]
     BreadSlicing breadSlicing;
 
     [SerializeField]
@@ -224,6 +224,8 @@ public class BakeryGameLoop : MonoBehaviour
             br.position = openOven.gameObject.transform.position;
             br.position += br.up;
             br.position -= br.right;
+            breadSlicing = br.gameObject.GetComponent<BreadSlicing>();
+            
         }
         if (cuttingSurface.IsBreadOnCuttingBoard())
         {
@@ -253,8 +255,9 @@ public class BakeryGameLoop : MonoBehaviour
     GameStates cutBread()
     {
         instructionText.SetText("Please cut the bread");
-        if (breadSlicing.getBreadSliced())
+        if (breadSlicing.isBreadSliced)
         {
+            Debug.Log("bread is sliced go to next state");
             //SpawnPlate();
             return GameStates.finishBread;
         }

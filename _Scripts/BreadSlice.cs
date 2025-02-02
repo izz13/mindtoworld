@@ -12,8 +12,9 @@ public class BreadSlice : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Knife")
         {
             isSliced = true;
