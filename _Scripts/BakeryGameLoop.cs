@@ -96,8 +96,8 @@ public class BakeryGameLoop : MonoBehaviour
     Breadtype ChooseBreadtype()
     {
         int BreadtypeCount = 5;
-        //int RandomInt = Random.Range(0, BreadtypeCount);
-        int RandomInt = 0;
+        int RandomInt = Random.Range(0, BreadtypeCount);
+        //int RandomInt = 0;
         if (RandomInt == 0)
             return Breadtype.Wheat;
         else if (RandomInt == 1)
@@ -301,7 +301,8 @@ public class BakeryGameLoop : MonoBehaviour
         {
             points += 1;
             setParameters();
-            Destroy(plateCollider.gameObject);
+            GameObject plate = plateTransform.gameObject.GetComponentInParent<GameObject>();
+            Destroy(plate);
             Destroy(breadSlicing.gameObject);
             return GameStates.readInstructions;
         }
