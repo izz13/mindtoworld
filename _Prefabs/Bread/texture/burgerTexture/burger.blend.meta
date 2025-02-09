@@ -3,7 +3,22 @@ guid: fe55ee506f76b415a8aedd5fb284bf23
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bread_outside._top
+    second: {fileID: 2100000, guid: 078de0a5c4a64480c983d8f9c41d6bfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bread_outside._top.002
+    second: {fileID: 2100000, guid: 262498c117a4f4fa3972141f3b23cfbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pit
+    second: {fileID: 2100000, guid: 96b86f520b5484b408a12f3f30d1a7f5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
