@@ -181,6 +181,7 @@ public class BakeryGameLoop : MonoBehaviour
             instructionText.SetText("You placed the correct bread.");
             openOven.OpenOvenDoor();
             heldBread = pc.bread;
+            pc.ResetParts();
             return GameStates.bakeBread;
         }
         else if (pc.objectName == "")
