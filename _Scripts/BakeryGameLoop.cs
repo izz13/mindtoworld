@@ -175,13 +175,16 @@ public class BakeryGameLoop : MonoBehaviour
     {
         okButton.SetActive(false);
         nextMenuButton.SetActive(false);
+        Debug.Log(pc);
         
         if (pc.objectName == currentType.ToString())
         {
             instructionText.SetText("You placed the correct bread.");
             openOven.OpenOvenDoor();
             heldBread = pc.bread;
-            pc.ResetParts();
+            pc.objectName = "";
+            pc.br = null;
+            pc.bread = null;
             return GameStates.bakeBread;
         }
         else if (pc.objectName == "")
@@ -192,7 +195,13 @@ public class BakeryGameLoop : MonoBehaviour
         else
         {
             instructionText.SetText("You placed the wrong bread, Please select bread " + currentType.ToString());
-            pc.br.resetPos();
+            if (pc.br != null)
+            {
+                pc.br.resetPos();
+            }
+            pc.objectName = "";
+            pc.br = null;
+            pc.bread = null;
             return GameStates.collectBread;
         }
     }
