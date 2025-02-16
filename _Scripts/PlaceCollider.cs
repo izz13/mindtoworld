@@ -16,10 +16,4 @@ public class PlaceCollider : MonoBehaviour
         br = bread.GetComponent<Bread>();
     }
 
-    public void ResetParts()
-    {
-        objectName = "";
-        //bread = null;
-        //br = null;
-    }
 }
