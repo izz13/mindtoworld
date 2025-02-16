@@ -81,7 +81,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7157041968690046555
 MonoBehaviour:
@@ -464,8 +464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSliced: 0
-  audioSource: {fileID: 1199321638582822180}
-  sliceAudio: {fileID: 8300000, guid: 088ba1df0d9c04f62b913b155a14cd10, type: 3}
 --- !u!82 &1199321638582822180
 AudioSource:
   m_ObjectHideFlags: 0
@@ -716,8 +714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSliced: 0
-  audioSource: {fileID: 5285447638912070840}
-  sliceAudio: {fileID: 8300000, guid: 088ba1df0d9c04f62b913b155a14cd10, type: 3}
 --- !u!82 &5285447638912070840
 AudioSource:
   m_ObjectHideFlags: 0
