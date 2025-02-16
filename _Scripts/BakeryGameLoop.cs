@@ -91,6 +91,12 @@ public class BakeryGameLoop : MonoBehaviour
     [SerializeField]
     Vector3 knifeStartPos;
 
+    [SerializeField]
+    AudioSource audioSource;
+
+    public AudioClip pointClip;
+
+    public float AudioVolume = 0.5f;
 
     PlateCollider plateCollider;
 
@@ -231,6 +237,7 @@ public class BakeryGameLoop : MonoBehaviour
         if (!openOven.isOpen())
         {
             openOven.OpenOvenDoor();
+            audioSource.PlayOneShot(pointClip, AudioVolume);
             Transform br = Instantiate(slicingBreadPrefab);
             br.position = openOven.gameObject.transform.position;
             br.position += br.up;
@@ -314,7 +321,7 @@ public class BakeryGameLoop : MonoBehaviour
             nextMenuButton.SetActive(true);
             openOven.ClosedDoor();
             knife.transform.position = knifeStartPos;
-            
+            audioSource.PlayOneShot(pointClip, AudioVolume);
             return GameStates.readInstructions;
         }
         else

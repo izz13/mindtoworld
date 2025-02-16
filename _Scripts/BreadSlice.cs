@@ -6,10 +6,22 @@ public class BreadSlice : MonoBehaviour
 {
     public bool isSliced;
 
+    public AudioSource audioSource;
+
+    public AudioClip sliceAudio;
+
     private void Start()
     {
         isSliced = false;
 
+    }
+
+    private void Update()
+    {
+        if (isSliced)
+        {
+            audioSource.PlayOneShot(sliceAudio, 0.5f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
