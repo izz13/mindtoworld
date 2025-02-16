@@ -16,6 +16,8 @@ public class BreadSlicing : MonoBehaviour
     [SerializeField]
     GameObject breadSliced;
 
+    public AudioSource audioSource;
+
     public bool isBreadSliced = false;
 
     int breadState = 0;
@@ -36,11 +38,13 @@ public class BreadSlicing : MonoBehaviour
         if (S1.isSliced)
         {
             slice1.SetActive(false);
+            audioSource.PlayOneShot(audioSource.clip, 0.5f);
         }
 
         if (S2.isSliced)
         {
             slice2.SetActive(false);
+            audioSource.PlayOneShot(audioSource.clip, 0.5f);
         }
 
         if (S1.isSliced && S2.isSliced)
