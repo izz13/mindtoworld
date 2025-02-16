@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< Updated upstream
-  m_IndirectSpecularColor: {r: 0.28470808, g: 0.39519516, b: 0.34249324, a: 1}
-=======
   m_IndirectSpecularColor: {r: 0.18028373, g: 0.22571398, b: 0.30692294, a: 1}
->>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2439,8 +2435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!82 &1065316769
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2542,7 +2536,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6575145521219683035, guid: a202a68a86c6e4ea38b1261a2364583a, type: 3}
   m_PrefabInstance: {fileID: 27880837}
   m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!4 &1085932000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3416937640908750033, guid: a202a68a86c6e4ea38b1261a2364583a, type: 3}
