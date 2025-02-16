@@ -10,6 +10,11 @@ public class Bread : MonoBehaviour
 
     private void Start()
     {
+        resetPos();
+    }
+
+    public void resetPos()
+    {
         transform.position = startPos;
     }
 

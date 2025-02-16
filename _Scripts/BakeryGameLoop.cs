@@ -190,7 +190,8 @@ public class BakeryGameLoop : MonoBehaviour
         }
         else
         {
-            instructionText.SetText("You placed the wrong bread");
+            instructionText.SetText("You placed the wrong bread, Please select bread " + currentType.ToString());
+            pc.br.resetPos();
             return GameStates.collectBread;
         }
     }
