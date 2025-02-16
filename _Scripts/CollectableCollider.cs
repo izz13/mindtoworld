@@ -17,6 +17,11 @@ public class CollectableCollider : MonoBehaviour
         return hasBread;
     }
 
+    public void setHasBreadFalse()
+    {
+        hasBread = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
 

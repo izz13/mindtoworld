@@ -323,6 +323,8 @@ public class BakeryGameLoop : MonoBehaviour
             openOven.ClosedDoor();
             knife.transform.position = knifeStartPos;
             audioSource.PlayOneShot(pointClip, AudioVolume);
+            hasPlateSpawned = false;
+            collectableCollider.setHasBreadFalse();
             return GameStates.readInstructions;
         }
         else
